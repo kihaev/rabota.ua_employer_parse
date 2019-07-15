@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
-from pickle import load,dump
 from time import sleep
+import pickle
 import sqlite3
 
 
@@ -28,7 +28,7 @@ def drop_table_db(name):
     mycursor.execute(drop_table)
     
     
-# insert people info itno db
+# insert people info into db
 def insert_into_db(Name_surname, Profile_url, Email, Phone_number, City, Cv_url):
     sql = "INSERT INTO employees (Name_Surname, Profile_Url, Email, Phone_Number, City, CV_Url) VALUES (?, ?, ?, ?, ?, ?)"
     val = (Name_surname, Profile_url, Email, Phone_number, City, Cv_url)
