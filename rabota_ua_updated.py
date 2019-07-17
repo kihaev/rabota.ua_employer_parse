@@ -86,8 +86,8 @@ def get_people_info(start_page):
                 vacancy = soup_profile.find("span", {"class":"select2-selection__rendered"}).get_text()[:-6]
             print(vacancy)
             cv_url = soup_profile.find("div",  {"class":"rua-g-right"}).a["href"]
-            driver.get(cv_url)
-            #print(name_surname + "\n" + profile_url + "\n" + email +"\n"+ phone_number + "\n" + city + "\n" + cv_url)
+            #driver.get(cv_url)
+            #print(name_surname + "\n" + profile_url + "\n" + email +"\n"+ phone_number + "\n" + vacancy +"\n" + city + "\n" + cv_url)
             #inserting info
             insert_into_db(name_surname, profile_url, email, phone_number, vacancy, city, cv_url)
 
