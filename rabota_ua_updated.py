@@ -4,6 +4,15 @@ from time import sleep
 import sqlite3
 import pickle
 
+
+#constants   
+database_path = "mydatabase.db"
+table_name = "employees"
+driver_path = "C:\\Users\\yurak\\Desktop\\test\\geckodriver.exe"
+cookies_path = "C:\\Users\\yurak\\Desktop\\test\\cookies.pkl"
+starting_page = "https://notebook.rabota.ua/employer/notepad/cvs?vacancyId=-1"
+conn, mycursor = conn_db(database_path)
+driver = sel_init(driver_path, starting_page)
 # connection to db
 def conn_db(path):
     connx = sqlite3.connect(path)
@@ -107,16 +116,6 @@ def start():
     load_cookie(cookies_path)
     get_people_info(starting_page)
     show_table_rows(name)  
-    
-    
-#constants   
-database_path = "mydatabase.db"
-table_name = "employees"
-driver_path = "C:\\Users\\yurak\\Desktop\\test\\geckodriver.exe"
-cookies_path = "C:\\Users\\yurak\\Desktop\\test\\cookies.pkl"
-starting_page = "https://notebook.rabota.ua/employer/notepad/cvs?vacancyId=-1"
-conn, mycursor = conn_db(database_path)
-driver = sel_init(driver_path, starting_page)
 
 
 start()
