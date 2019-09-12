@@ -13,6 +13,8 @@ cookies_path = "C:\\Users\\yurak\\Desktop\\test\\cookies.pkl"
 starting_page = "https://notebook.rabota.ua/employer/notepad/cvs?vacancyId=-1"
 conn, mycursor = conn_db(database_path)
 driver = sel_init(driver_path, starting_page)
+
+
 # connection to db
 def conn_db(path):
     connx = sqlite3.connect(path)
